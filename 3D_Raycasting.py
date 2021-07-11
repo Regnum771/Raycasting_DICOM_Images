@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jul 11 10:31:02 2021
-
-@author: nqkha
-"""
 from vtk import (
     vtkDICOMImageReader, 
     vtkRenderer, vtkRenderWindow, vtkRenderWindowInteractor, 
@@ -23,8 +17,9 @@ def main():
     iren.SetRenderWindow(renWin)
 
     # vtkDICOMImageReader reads all DICOM file within a directory
+    directoryName = "D:\\DICOM-RT-01"
     reader = vtkDICOMImageReader()
-    reader.SetDirectoryName("D:\\DICOM-RT-01")
+    reader.SetDirectoryName(directoryName)
     reader.Update()
 
     # Use a raycast mapper to create volume
